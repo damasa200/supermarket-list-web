@@ -1,0 +1,17 @@
+.button-container {
+  width: 84%;
+  background-color:rgb(245, 210, 12) ;
+  font-size: 14spx;
+  color: rgb(17, 16, 16);
+  font-weight: Medium;
+  font-family: "Avenir Next";
+  margin-top:14px;
+  height:40px;
+  border-radius:8px;
+  border: 0px;
+  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+
+
+
+}
