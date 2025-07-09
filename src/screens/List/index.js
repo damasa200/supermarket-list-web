@@ -1,50 +1,60 @@
-import {useState} from 'react'
-import "./index.css"
-import {useEffect} from "react";
-import {getList} from "../../services/request"
-import React from 'react';
-import {ListCard} from '../../components/ListCard'
+import { useState, useEffect } from "react";
+import "./index.css";
+import { getList } from "../../services/request";
+import { ListRender } from "../../components/ListRender";
+import { Loader } from "../../components/Loader";
+import { Modal } from "../../components/Modal/index,";
 
-export const ListScreen = () => {
-  const[Loading, setLoading] = useState(true);
-  const [ListData, setListData] = useState([])
+export const ListScreen = ({onClose, item}) => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [listData, setListData] = useState([]);
+  const [selectedItem, setSelectedItem]= useState(null);
 
-
-
-  const loadListItems = async () => { 
-    setLoading(true)
-    const resul = await getList();
-    console.log({ resul});
-    setListData (resul);
+  const loadListItems = async () => {
+    setLoading(true);
+    const result = await getList();
+    setListData(result);
     setLoading(false);
-    
   };
 
-  useEffect (() => {
-    loadListItems ();    
-  }, [] )  
+  useEffect(() => {
+    loadListItems();
+  }, []);
+
+  const onClickAddButton = () => {
+    setSelectedItem(null);
+    setModalVisible(true);
+  };
+  
+  const onCloseModal = () =>{
+    setModalVisible(false)
+    loadListItems();
+    setSelectedItem(null);
+  };
+    
+   const onEditItem = (item) => { 
+    setSelectedItem(item);
+    setModalVisible(true);   
+  }
 
   return (
-    <div className="List-screen-container ">
+    <div className="List-screen-container">
       <div className="List-screen-content-container">
         <div className="List-screen-header">
-          <img className="Logo-image" src= "images/logo.png" alt ="supermarket-list-logo"
-          />
-          <h1> Lista Supermercado</h1>          
+          <div className="List-screen-title-container">
+            <img className="Logo-image" src="/images/logo.png" alt="Logo" />
+            <h1 className="List-screen-header-title">Lista Supermercado</h1>
+          </div>
+          <button onClick={onClickAddButton}className="add-button">Adicionar</button>
         </div>
 
-
+        {/* Aqui renderiza os cards */}
         <div className="List-screen-List-container">
-          {Loading && <h3>Carregando...</h3>}
-
-
-          {!Loading && ListData?.length > 0 ? ListData.map(item => <ListCard key={item._id} item={item}/>): <h3>Sua Lista está vazia,
-              adicione um novo item cliecando no botão de adicionar            
-            </h3>
-          }
-
+          {loading ? <Loader /> : <ListRender onEdit={onEditItem} List={listData} />}
         </div>
-      </div>      
+      </div>
+      {modalVisible && <Modal item={selectedItem} onClose={onCloseModal}/>}
     </div>
-  )  
+  );
 };

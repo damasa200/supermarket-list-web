@@ -2,7 +2,7 @@
 /* Index.css da pasta Home que está dentro da pasta screens */
 
 .home-screen-container {
-  flex: 1;
+  display: flex 1;
   width: 100vw;
   height: 100vh;
   background-color:rgb(245, 210, 12);

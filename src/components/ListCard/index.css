@@ -1,12 +1,74 @@
 .list-card-container {
-  width: 934px;
-  height: 58px;
-  background-color:rgb(202, 119, 10);
-  border-radius: 12px;
-  margin: 24px;
-
-
-
-
-
+  display: flex; 
+  align-items: center;  
+  width: 98%;  
+  max-width: 100%; 
+  height: 58px; 
+  min-height:48px;
+  padding: 0 12px; 
+  background-color: rgb(245, 210, 12); 
+  border-radius: 8px; 
+  margin: 12px 0; 
+  cursor: pointer;
+  
 }
+
+.checkbox {
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  width: 24px; 
+  height: 24px;
+  cursor: pointer; 
+  margin-right: 12px; 
+}
+
+
+.checkbox-icon {
+  width: 100%; 
+  height: 100%;
+  object-fit: contain; 
+  justify-content: space-between; 
+}
+
+
+.checkbox input[type="checkbox"] {
+  display: none;
+  
+}
+
+
+.list-card-text-container {
+  display: flex;
+  flex-direction: column;   
+  
+}
+
+
+.list-card-title {
+  display: flex;
+  font-size: 16px;
+  font-weight: 550;
+  margin-bottom: 4px;
+  color: #000;
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
+
+.list-card-subtitle {
+  font-size: 14px;
+  color: #333;
+}
+
+.arrow-icon {
+  width: 6px;
+  height: 12px;
+  object-fit: contain; 
+  margin-left: auto;
+  
+}
+
+ 
+
