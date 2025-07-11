@@ -3,7 +3,7 @@
 Este é um aplicativo desenvolvido usando React.js, com o objetivo de facilitar a criação de listas de supermercado.
 
 <p>
-<ima height = "500" src= "https://github.com/damasa200/supermarket-list-web/blob/master/public/images/demo.gif"/>
+  <img height="500" src="https://raw.githubusercontent.com/damasa200/supermarket-list-web/master/public/images/demo.gif" />
 </p>
 
 
