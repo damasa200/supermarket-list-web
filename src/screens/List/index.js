@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./index.css";
-import { getList } from "../../services/request";
+import { getList, updateItem } from "../../services/request";
 import { ListRender } from "../../components/ListRender";
 import { Loader } from "../../components/Loader";
 import { Modal } from "../../components/Modal/index,";
@@ -38,6 +38,16 @@ export const ListScreen = ({onClose, item}) => {
     setModalVisible(true);   
   }
 
+  const onCheckItem = async (item) => {
+    const result = await updateItem(item._id,{
+      ...item,
+      checked:true,
+    });
+    if(!result.error){
+      await loadListItems();
+    }
+  };
+
   return (
     <div className="List-screen-container">
       <div className="List-screen-content-container">
@@ -46,12 +56,12 @@ export const ListScreen = ({onClose, item}) => {
             <img className="Logo-image" src="/images/logo.png" alt="Logo" />
             <h1 className="List-screen-header-title">Lista Supermercado</h1>
           </div>
-          <button onClick={onClickAddButton}className="add-button">Adicionar</button>
+          <button onClick={onClickAddButton}className="add-button">{window.innerWidth <= 420 ? "+" : "Adicionar"}</button>
         </div>
 
         {/* Aqui renderiza os cards */}
         <div className="List-screen-List-container">
-          {loading ? <Loader /> : <ListRender onEdit={onEditItem} List={listData} />}
+          {loading ? <Loader /> : <ListRender onCheckItem={onCheckItem} onEdit={onEditItem} List={listData} />}
         </div>
       </div>
       {modalVisible && <Modal item={selectedItem} onClose={onCloseModal}/>}

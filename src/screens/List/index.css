@@ -74,3 +74,45 @@
   margin-top: 24px;
 }
 
+@media screen and (max-width:830px){
+  .List-screen-content-container {
+    width: 80vw;  
+ }
+
+ .List-screen-header-title {
+    font-size: 34px;
+    line-height: 12px;
+  }
+
+  .add-button {
+    width: 150px;
+  }
+
+  .Logo-image {
+    width: 64px;
+    height: auto;
+  }
+
+}
+  
+@media screen and (max-width:420px) {
+  .List-screen-header-title {
+    font-size: 14px;
+    line-height: 12px;
+  }
+
+  .Logo-image {
+    width: 44px;
+    height: auto;
+  }
+
+  .List-screen-content-container {
+    width: 72vw;  
+ }
+  .add-button {
+  width: 42px;
+
+
+ }
+  
+}

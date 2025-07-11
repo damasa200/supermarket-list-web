@@ -8,8 +8,7 @@
   padding: 0 12px; 
   background-color: rgb(245, 210, 12); 
   border-radius: 8px; 
-  margin: 12px 0; 
-  cursor: pointer;
+  margin: 12px 0;  
   
 }
 
@@ -67,6 +66,7 @@
   height: 12px;
   object-fit: contain; 
   margin-left: auto;
+  cursor: pointer;
   
 }
 

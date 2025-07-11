@@ -1,21 +1,19 @@
 import { useState } from "react";
 import "./index.css";
 
-export const ListCard = ({ item, onClick }) => {
+export const ListCard = ({ item, onClick, onCheckItem }) => {
   const [checked, setChecked] = useState(item?.checked || false);
-
-  const toggleCheck = () => {
-    setChecked(!checked);
-  };
 
   return (
     <div className="list-card-container" onClick={() => onClick(item)}>
-      <div className="checkbox">
+      <div className="checkbox" onClick={(e) => {
+        e.stopPropagation(); 
+        setChecked(!checked);
+      }}>
         <img
           className="checkbox-icon"
           src={`/images/${checked ? "checked.svg" : "unchecked.svg"}`}
-          alt="checked-item"
-          onClick={toggleCheck}
+          alt="checkbox"
         />
       </div>
 

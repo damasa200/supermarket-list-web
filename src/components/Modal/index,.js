@@ -95,7 +95,7 @@ const callDeleItem = async () => {
             <Button variant="outline" onClick={callDeleItem}
             icon="/images/trash.svg"
             >
-              Deletar Item
+              Deletar
             </Button>
          )}
          <Button onClick={item ? callUpdateItem : callAddItem}>

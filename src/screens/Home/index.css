@@ -21,7 +21,6 @@
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 10px 18px rgba(10, 0, 0, 0.12);
-
 }
 
 .shopping-bag-image {
@@ -54,9 +53,52 @@
 }
 
 .home-screen-button-container {
-  width: 452xp;
-  margin-top: px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 452px;
+  margin-top:24px;
 }
+
+@media screen and (max-width: 420px) {
+  .home-screen-content-container{
+    max-width: 300px;
+    max-height:600px;
+    padding:10px;
+    
+  }
+
+  .home-screen-button-container {
+    width: 300px;
+    margin-top: 24px;       
+  }
+
+  .home-screen-title {
+    max-width: 300px;
+  }
+
+  .shopping-bag-image {
+
+    width: 190px;
+    height: auto;  
+   
+  }
+
+  .home-screen-subitle-description {
+  max-width: 260px;
+  margin: 10px auto; 
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .home-screen-container {
+    overflow-x:hidden;
+    overflow-y: hidden;
+
+  }
+  
+}
+
 
 
 
