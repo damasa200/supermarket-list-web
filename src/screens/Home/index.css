@@ -24,10 +24,10 @@
 }
 
 .shopping-bag-image {
-  width: 220;
+  width: 398px;
   height: auto;
-  margin: 50px;
-  box-shadow: 0 10px 18px rgba(0, 0, 0, 0.12);
+  margin: 40px;
+  
 
 }
 
@@ -60,6 +60,16 @@
   margin-top:24px;
 }
 
+
+@media screen and (max-width: 820px) {
+  .home-screen-container {
+    overflow-x:hidden;
+    overflow-y: hidden;
+  }  
+  
+}
+
+
 @media screen and (max-width: 420px) {
   .home-screen-content-container{
     max-width: 300px;
@@ -79,7 +89,7 @@
 
   .shopping-bag-image {
 
-    width: 190px;
+    width: 230px;
     height: auto;  
    
   }
@@ -90,14 +100,6 @@
   }
 }
 
-@media screen and (max-width: 820px) {
-  .home-screen-container {
-    overflow-x:hidden;
-    overflow-y: hidden;
-
-  }
-  
-}
 
 
 

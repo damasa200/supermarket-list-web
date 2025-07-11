@@ -26,7 +26,7 @@ const HomeScreen = () => {
   return (
     <div className="home-screen-container">
       <div className='home-screen-content-container '>
-        <img className='shopping-bag-image' src="/images/shopping-bag.svg"
+        <img className='shopping-bag-image' src="/images/shopping-bag.png"
          alt="shopping-bag" ></img>
         <h1 className='home-screen-title'>
           Sua Lista de supermercado mais fácil do que nunca.</h1>
