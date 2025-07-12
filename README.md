@@ -6,12 +6,20 @@ Este é um aplicativo desenvolvido usando React.js, com o objetivo de facilitar 
   <img height="500" src="https://raw.githubusercontent.com/damasa200/supermarket-list-web/master/public/images/demo.gif" />
 </p>
 
+## Link para o APP de produção:
+
+https://supermarket-list-web-mu.vercel.app/
+
 
 ## Tecnologias Utilizadas:
 
 -React.js 
 -CSS
 -Axios
+
+## Requisitos para executar:
+- Node.js (https://nodejs.org/en/)
+
 
 ## Instruções de execução:
 1. Clone the project: 
